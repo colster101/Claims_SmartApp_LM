@@ -1,19 +1,50 @@
-# Claims Dashboard
+# Claims SmartApp (LM)
 
-A static single-page claims handling dashboard (HTML/CSS/vanilla JS). No build step —
-`index.html` is served directly.
+A claims-handling dashboard demo built with **React + Vite**. Ported from a single static
+HTML prototype into a component-based app with CSS Modules.
 
-## Local preview
-
-Open `index.html` in a browser, or run a simple static server:
+## Getting started
 
 ```bash
-npx serve .
+npm install
+npm run dev
 ```
+
+Then open the URL Vite prints (default http://localhost:5173).
+
+## Scripts
+
+- `npm run dev` — start the dev server with hot reload
+- `npm run build` — production build into `dist/`
+- `npm run preview` — preview the production build locally
+
+## Project structure
+
+```
+src/
+├── main.jsx                 # entry point
+├── App.jsx                  # layout + app state (modals, reserve flow)
+├── App.module.css
+├── data/claims.js           # seed claim data + business constants
+├── utils/format.js          # currency parsing / formatting helpers
+├── styles/global.css        # design tokens + shared primitives (buttons, pills, modal chrome)
+└── components/
+    ├── Sidebar/             # left navigation
+    ├── Topbar/              # user bar
+    ├── StatCards/           # top KPI cards
+    ├── ClaimsByStage/       # lifecycle distribution panel
+    ├── TriageConsistency/   # auto-routing donut
+    ├── RecentClaims/        # claims table (opens claim modal)
+    ├── ClaimModal/          # claim decision card (Overview/Triage/Analysis/Reserve/Attachments)
+    ├── ReserveModal/        # reserve setting form + authority checks
+    ├── ReserveSummaryModal/ # recommendation summary + approval routing
+    └── Toast/               # transient confirmation toast
+```
+
+Each component owns a `*.module.css` for its unique styles; cross-cutting design primitives
+live in `src/styles/global.css`.
 
 ## Deploy to Vercel
 
-This is a zero-config static site. Either:
-
-- **Dashboard:** push to GitHub, then import the repo at [vercel.com/new](https://vercel.com/new). No framework preset needed (select "Other").
-- **CLI:** run `vercel` from this folder and follow the prompts.
+Import the repo at [vercel.com/new](https://vercel.com/new). Vercel auto-detects Vite —
+build command `npm run build`, output directory `dist`. Every push to `main` auto-deploys.

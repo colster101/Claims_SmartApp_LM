@@ -1,0 +1,68 @@
+.touch-panel {
+  display: flex;
+  flex-direction: column;
+}
+.donut-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px 0 16px;
+}
+.donut {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(var(--teal) 0% 88%, #e3e6ea 88% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.donut-inner {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.donut-pct {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.donut-sub {
+  font-size: 10.5px;
+  color: var(--text-light);
+  letter-spacing: .05em;
+  font-weight: 600;
+}
+.legend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--gray-line);
+  border-radius: 8px;
+  padding: 11px 14px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+}
+.legend-row .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+.legend-row .val {
+  font-weight: 700;
+}
+.stp-note {
+  font-size: 12.5px;
+  color: var(--text-light);
+  margin-top: 6px;
+}
+.stp-note b {
+  color: var(--orange);
+}

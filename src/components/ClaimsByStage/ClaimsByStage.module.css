@@ -1,0 +1,45 @@
+.status-row {
+  padding: 10px 0 12px;
+}
+.status-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.status-sq {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+.status-name {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+.status-count {
+  color: var(--text-light);
+  font-size: 13px;
+  margin-right: 22px;
+}
+.status-pct {
+  font-weight: 700;
+  font-size: 13.5px;
+  width: 34px;
+  text-align: right;
+}
+.status-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: #eef0f3;
+  margin-top: 8px;
+  overflow: hidden;
+}
+.status-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  width: 0%;
+}
+.status-row + .status-row {
+  border-top: 1px solid var(--gray-line);
+}
